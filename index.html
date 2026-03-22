@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="BOLAPELANGI2 - Official Social Media Hub. Connect with us on all major platforms. Find our official accounts on Facebook, Instagram, WhatsApp, Twitter, Telegram, Bluesky, TikTok, YouTube, and Discord.">
-    <meta name="keywords" content="BOLAPELANGI2, social media, backlink, official account, hub, linktree alternative">
+    <meta name="description" content="BOLAPELANGI2 - Official Digital Presence Hub. Connect with us across all major platforms. Professional, secure, and always accessible.">
+    <meta name="keywords" content="BOLAPELANGI2, digital hub, social media, official accounts, link management, professional presence">
     <meta name="author" content="BOLAPELANGI2">
-    <meta name="theme-color" content="#6366f1">
-    <meta property="og:title" content="BOLAPELANGI2 | Official Social Media Hub">
-    <meta property="og:description" content="Connect with BOLAPELANGI2 on all major social platforms">
+    <meta name="theme-color" content="#0f172a">
+    <meta property="og:title" content="BOLAPELANGI2 | Official Digital Hub">
+    <meta property="og:description" content="Your premier destination to connect with BOLAPELANGI2 across all platforms">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%236366f1'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white' font-family='Arial'%3E🌈%3C/text%3E%3C/svg%3E">
-    <title>BOLAPELANGI2 | Official Social Media Hub</title>
+    <meta property="og:image" content="https://placehold.co/1200x630/0f172a/ffffff?text=BOLAPELANGI2">
+    <title>BOLAPELANGI2 | Official Digital Presence Hub</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%236366f1'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white' font-family='Arial'%3E🌈%3C/text%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%236366f1'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white' font-family='Arial'%3E🌈%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%236366f1'/%3E%3Ctext x='50' y='67' font-size='48' text-anchor='middle' fill='white' font-family='Arial'%3EB%3C/text%3E%3C/svg%3E">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -30,45 +27,31 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0c10;
-            color: #ffffff;
+            background: #ffffff;
+            color: #111827;
             overflow-x: hidden;
         }
 
-        /* Animated Gradient Background */
-        .animated-bg {
+        /* Premium Gradient Background */
+        .bg-premium {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15), transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.15), transparent 50%),
-                        radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.1), transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Noise Texture */
-        .noise {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            background: radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
-            opacity: 0.4;
         }
 
-        /* Main Container */
+        /* Container */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
 
         /* Navigation */
@@ -77,9 +60,9 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(10, 12, 16, 0.8);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             z-index: 1000;
             padding: 1rem 0;
         }
@@ -93,31 +76,30 @@
             align-items: center;
         }
 
-        .nav-logo {
+        .logo {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .nav-logo-icon {
+        .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #6366f1, #ec489a);
+            background: linear-gradient(135deg, #1e293b, #0f172a);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-        }
-
-        .nav-logo-text {
             font-weight: 700;
             font-size: 1.2rem;
-            background: linear-gradient(135deg, #ffffff, #a5b4fc);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: white;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #0f172a;
+            letter-spacing: -0.3px;
         }
 
         .nav-links {
@@ -126,7 +108,7 @@
         }
 
         .nav-links a {
-            color: #94a3b8;
+            color: #4b5563;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
@@ -139,7 +121,7 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -147,87 +129,36 @@
             padding: 8rem 0 5rem;
         }
 
-        /* Main Logo */
-        .main-logo {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .logo-ring {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto;
-            position: relative;
-            animation: rotateRing 20s linear infinite;
-        }
-
-        .logo-ring svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .logo-core {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec489a);
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
-            animation: floatLogo 3s ease-in-out infinite;
-        }
-
-        @keyframes rotateRing {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes floatLogo {
-            0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
-            50% { transform: translate(-50%, -50%) translateY(-10px); }
-        }
-
-        /* Hero Text */
-        .hero-title {
-            font-size: 5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff, #a5b4fc, #c084fc);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-            animation: shimmer 5s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
         .hero-badge {
             display: inline-block;
-            padding: 0.3rem 1rem;
-            background: rgba(99, 102, 241, 0.2);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 0.4rem 1rem;
+            background: #f1f5f9;
             border-radius: 40px;
             font-size: 0.75rem;
             font-weight: 500;
-            color: #a5b4fc;
+            color: #6366f1;
             margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .hero-description {
             font-size: 1.1rem;
-            color: #94a3b8;
+            color: #6b7280;
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
@@ -242,34 +173,19 @@
             flex-wrap: wrap;
         }
 
-        .stat-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 28px;
-            padding: 1.2rem 2rem;
+        .stat-item {
             text-align: center;
-            transition: all 0.3s;
-        }
-
-        .stat-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.3);
         }
 
         .stat-number {
             font-size: 2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #6366f1, #ec489a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #0f172a;
         }
 
         .stat-label {
-            font-size: 0.7rem;
-            color: #64748b;
+            font-size: 0.75rem;
+            color: #9ca3af;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 500;
@@ -278,208 +194,181 @@
         /* Section Header */
         .section-header {
             text-align: center;
-            margin: 5rem 0 3rem;
+            margin: 4rem 0 3rem;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
+            color: #0f172a;
             margin-bottom: 0.5rem;
         }
 
         .section-header p {
-            color: #94a3b8;
+            color: #6b7280;
             font-size: 0.95rem;
         }
 
-        .section-divider {
-            width: 70px;
-            height: 3px;
-            background: linear-gradient(90deg, #6366f1, #ec489a);
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: #e2e8f0;
             margin: 1rem auto 0;
-            border-radius: 3px;
         }
 
         /* Social Grid */
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
             margin: 2rem 0 4rem;
         }
 
-        /* Card Premium */
-        .social-card {
-            background: rgba(18, 20, 26, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 32px;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        /* Premium Cards */
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
             position: relative;
-            overflow: hidden;
         }
 
-        .social-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec489a);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .social-card:hover {
-            transform: translateY(-8px);
-            background: rgba(25, 28, 35, 0.9);
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 0.5);
-        }
-
-        .social-card:hover::before {
-            transform: scaleX(1);
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            border-color: #e2e8f0;
         }
 
         .card-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
-        .icon-container {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
-            border-radius: 24px;
+        .icon-wrapper {
+            width: 56px;
+            height: 56px;
+            background: #f8fafc;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
         }
 
-        .social-card:hover .icon-container {
-            transform: scale(1.05);
+        .card:hover .icon-wrapper {
+            background: #f1f5f9;
         }
 
-        .icon-container i {
-            font-size: 2.2rem;
+        .icon-wrapper i {
+            font-size: 1.8rem;
         }
 
-        .platform-order {
+        .order-badge {
             font-size: 0.7rem;
-            font-weight: 600;
-            color: #64748b;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.3rem 0.8rem;
-            border-radius: 30px;
-            font-family: monospace;
+            font-weight: 500;
+            color: #94a3b8;
+            background: #f8fafc;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
         }
 
-        .social-card h3 {
-            font-size: 1.5rem;
+        .card h3 {
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+            color: #0f172a;
         }
 
-        .social-card p {
-            color: #94a3b8;
+        .card p {
+            color: #6b7280;
             font-size: 0.85rem;
             line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Link Input Styling */
-        .link-field {
             margin-bottom: 1.2rem;
         }
 
-        .link-label {
+        /* Input Field */
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-label {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 0.7rem;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
-            color: #64748b;
+            color: #9ca3af;
             margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
-        .link-input {
+        .input-field {
             width: 100%;
-            padding: 0.9rem 1rem;
-            border: 1.5px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
             font-size: 0.85rem;
             font-family: 'Inter', monospace;
-            background: rgba(0, 0, 0, 0.4);
-            color: #ffffff;
+            background: #fefefe;
+            color: #1f2937;
             transition: all 0.2s;
         }
 
-        .link-input:focus {
+        .input-field:focus {
             outline: none;
             border-color: #6366f1;
-            background: rgba(0, 0, 0, 0.6);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-        }
-
-        .link-input::placeholder {
-            color: #4a5568;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
         /* Button */
-        .btn-visit {
+        .btn-link {
             width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 0.85rem;
+            background: #0f172a;
             border: none;
-            border-radius: 24px;
+            border-radius: 16px;
             color: white;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
         }
 
-        .btn-visit i {
-            transition: transform 0.2s;
-        }
-
-        .btn-visit:hover {
+        .btn-link:hover {
+            background: #1e293b;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px -8px rgba(99, 102, 241, 0.5);
         }
 
-        .btn-visit:hover i {
-            transform: translateX(4px);
+        .btn-link:active {
+            transform: translateY(0);
         }
 
         /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-            border-radius: 48px;
+        .cta {
+            background: #f8fafc;
+            border-radius: 32px;
             padding: 3rem;
             text-align: center;
             margin: 3rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .cta-section h3 {
-            font-size: 1.8rem;
+        .cta h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            color: #0f172a;
         }
 
-        .cta-section p {
-            color: #94a3b8;
+        .cta p {
+            color: #6b7280;
             margin-bottom: 1.5rem;
         }
 
@@ -488,24 +377,23 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.8rem 2rem;
-            background: white;
-            color: #0a0c10;
+            background: #0f172a;
+            color: white;
+            border: none;
             border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
         .cta-button:hover {
+            background: #1e293b;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
         }
 
         /* Footer */
         .footer {
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: #0f172a;
             padding: 3rem 0;
             margin-top: 4rem;
         }
@@ -525,25 +413,27 @@
             margin-bottom: 1.5rem;
         }
 
-        .footer-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #6366f1, #ec489a);
-            border-radius: 12px;
+        .footer-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
         }
 
         .footer-logo-text {
             font-weight: 700;
-            font-size: 1.1rem;
+            color: white;
+            font-size: 1rem;
         }
 
         .footer p {
-            color: #64748b;
-            font-size: 0.85rem;
+            color: #94a3b8;
+            font-size: 0.8rem;
         }
 
         .footer-social {
@@ -554,9 +444,9 @@
         }
 
         .footer-social a {
-            color: #64748b;
+            color: #94a3b8;
             transition: color 0.2s;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .footer-social a:hover {
@@ -572,42 +462,38 @@
                 font-size: 2.5rem;
             }
             .section-header h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             .social-grid {
                 grid-template-columns: 1fr;
-                gap: 1.2rem;
+                gap: 1rem;
             }
             .nav-links {
                 display: none;
             }
             .stats {
-                gap: 1rem;
+                gap: 1.5rem;
             }
-            .stat-card {
-                padding: 0.8rem 1.2rem;
-            }
-            .cta-section h3 {
-                font-size: 1.3rem;
+            .cta {
+                padding: 2rem;
             }
         }
     </style>
 </head>
 <body>
-<div class="animated-bg"></div>
-<div class="noise"></div>
+<div class="bg-premium"></div>
 
 <!-- Navigation -->
 <nav class="navbar">
     <div class="nav-container">
-        <div class="nav-logo">
-            <div class="nav-logo-icon">🌈</div>
-            <span class="nav-logo-text">BOLAPELANGI2</span>
+        <div class="logo">
+            <div class="logo-icon">B</div>
+            <span class="logo-text">BOLAPELANGI2</span>
         </div>
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#">Platforms</a>
-            <a href="#">About</a>
+            <a href="#">Connect</a>
         </div>
     </div>
 </nav>
@@ -616,57 +502,46 @@
     <!-- Hero Section -->
     <section class="hero">
         <div>
-            <div class="main-logo">
-                <div class="logo-ring">
-                    <svg viewBox="0 0 200 200">
-                        <circle cx="100" cy="100" r="68" fill="none" stroke="url(#gradientRing)" stroke-width="2" stroke-dasharray="4 8"/>
-                        <defs>
-                            <linearGradient id="gradientRing" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#6366f1"/>
-                                <stop offset="50%" stop-color="#8b5cf6"/>
-                                <stop offset="100%" stop-color="#ec489a"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="logo-core">
-                    <span>🌈</span>
-                </div>
-            </div>
             <div class="hero-badge">
-                <i class="fas fa-star"></i> Official Hub • Trusted Since 2025
+                <i class="fas fa-globe"></i> Official Digital Presence
             </div>
-            <h1 class="hero-title">BOLAPELANGI2</h1>
-            <p class="hero-description">Your premium gateway to connect with us across all major social platforms. One hub, endless connections.</p>
+            <h1 class="hero-title">
+                Connect with <span>BOLAPELANGI2</span><br>
+                Across All Platforms
+            </h1>
+            <p class="hero-description">
+                Your premier destination to access all our official social channels. 
+                One hub, seamless connections, always updated.
+            </p>
             <div class="stats">
-                <div class="stat-card">
+                <div class="stat-item">
                     <div class="stat-number">9+</div>
                     <div class="stat-label">Platforms</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-item">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">Active</div>
+                    <div class="stat-label">Available</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Connections</div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Official</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Media Section -->
+    <!-- Social Section -->
     <div class="section-header">
-        <h2>Connect Everywhere</h2>
-        <p>Choose your favorite platform and join our community</p>
-        <div class="section-divider"></div>
+        <h2>Our Digital Ecosystem</h2>
+        <p>Choose your preferred platform to stay connected</p>
+        <div class="divider"></div>
     </div>
 
     <div class="social-grid" id="socialGrid"></div>
 
-    <!-- CTA Section -->
-    <div class="cta-section">
-        <h3>Ready to Connect?</h3>
+    <!-- CTA -->
+    <div class="cta">
+        <h3>Stay Connected Anywhere</h3>
         <p>Click any platform above to visit our official accounts</p>
         <button class="cta-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
             <i class="fas fa-arrow-up"></i> Back to Top
@@ -678,30 +553,27 @@
 <footer class="footer">
     <div class="footer-content">
         <div class="footer-logo">
-            <div class="footer-logo-icon">🌈</div>
+            <div class="footer-icon">B</div>
             <span class="footer-logo-text">BOLAPELANGI2</span>
         </div>
-        <p>Official Social Media Hub • Connect With Us Everywhere</p>
+        <p>Official Digital Presence Hub • Connect With Us Everywhere</p>
         <div class="footer-social" id="footerSocial"></div>
         <p style="margin-top: 1.5rem;">© 2025 BOLAPELANGI2 — All Rights Reserved</p>
     </div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 800, once: true });
-
-    // Platform Data - 9 Social Media Platforms with colors
+    // Platform Data - Clean & Professional
     const platforms = [
-        { name: "Facebook", icon: "fab fa-facebook-f", color: "#1877f2", defaultLink: "https://facebook.com/bolapelangi2", placeholder: "https://facebook.com/username", desc: "Follow our page for updates, news, and community discussions." },
-        { name: "Instagram", icon: "fab fa-instagram", color: "#e4405f", defaultLink: "https://instagram.com/bolapelangi2", placeholder: "https://instagram.com/username", desc: "Daily stories, reels, and visual content. Follow for inspiration." },
-        { name: "WhatsApp", icon: "fab fa-whatsapp", color: "#25D366", defaultLink: "https://wa.me/6281234567890", placeholder: "https://wa.me/62xxxx", desc: "Direct chat support and broadcast updates. Save our number!" },
-        { name: "Twitter", icon: "fab fa-twitter", color: "#1DA1F2", defaultLink: "https://twitter.com/bolapelangi2", placeholder: "https://twitter.com/username", desc: "Real-time updates, threads, and trending conversations." },
-        { name: "Telegram", icon: "fab fa-telegram", color: "#26A5E4", defaultLink: "https://t.me/bolapelangi2", placeholder: "https://t.me/username", desc: "Join our channel for exclusive content and community chat." },
-        { name: "Bluesky", icon: "fab fa-bluesky", color: "#1185fe", defaultLink: "https://bsky.app/profile/bolapelangi2", placeholder: "https://bsky.app/profile/username", desc: "Decentralized social network. Follow us on Bluesky." },
-        { name: "TikTok", icon: "fab fa-tiktok", color: "#ffffff", defaultLink: "https://tiktok.com/@bolapelangi2", placeholder: "https://tiktok.com/@username", desc: "Short videos, trends, and creative content. Follow us!" },
-        { name: "YouTube", icon: "fab fa-youtube", color: "#FF0000", defaultLink: "https://youtube.com/@bolapelangi2", placeholder: "https://youtube.com/@username", desc: "Subscribe for videos, tutorials, and exclusive content." },
-        { name: "Discord", icon: "fab fa-discord", color: "#5865F2", defaultLink: "https://discord.gg/bolapelangi2", placeholder: "https://discord.gg/invitecode", desc: "Join our community server. Chat, game, and connect!" }
+        { name: "Facebook", icon: "fab fa-facebook-f", color: "#1877f2", defaultLink: "https://facebook.com/bolapelangi2", placeholder: "https://facebook.com/yourusername", desc: "Follow for updates, news, and community engagement." },
+        { name: "Instagram", icon: "fab fa-instagram", color: "#e4405f", defaultLink: "https://instagram.com/bolapelangi2", placeholder: "https://instagram.com/yourusername", desc: "Visual stories, reels, and daily content." },
+        { name: "WhatsApp", icon: "fab fa-whatsapp", color: "#25D366", defaultLink: "https://wa.me/6281234567890", placeholder: "https://wa.me/yourphonenumber", desc: "Direct chat support and instant updates." },
+        { name: "Twitter", icon: "fab fa-twitter", color: "#1DA1F2", defaultLink: "https://twitter.com/bolapelangi2", placeholder: "https://twitter.com/yourusername", desc: "Real-time updates and trending conversations." },
+        { name: "Telegram", icon: "fab fa-telegram", color: "#26A5E4", defaultLink: "https://t.me/bolapelangi2", placeholder: "https://t.me/yourusername", desc: "Join our channel for exclusive content." },
+        { name: "Bluesky", icon: "fab fa-bluesky", color: "#1185fe", defaultLink: "https://bsky.app/profile/bolapelangi2", placeholder: "https://bsky.app/profile/yourusername", desc: "Decentralized social network experience." },
+        { name: "TikTok", icon: "fab fa-tiktok", color: "#010101", defaultLink: "https://tiktok.com/@bolapelangi2", placeholder: "https://tiktok.com/@yourusername", desc: "Creative videos and trending content." },
+        { name: "YouTube", icon: "fab fa-youtube", color: "#FF0000", defaultLink: "https://youtube.com/@bolapelangi2", placeholder: "https://youtube.com/@yourusername", desc: "Subscribe for videos and exclusive content." },
+        { name: "Discord", icon: "fab fa-discord", color: "#5865F2", defaultLink: "https://discord.gg/bolapelangi2", placeholder: "https://discord.gg/invitecode", desc: "Join our community server to connect." }
     ];
 
     // Load saved links
@@ -730,7 +602,7 @@
             }
             window.open(finalLink, '_blank', 'noopener,noreferrer');
         } else {
-            alert(`✨ Please fill in your ${platformName} link first.\n\nClick on the input field and add your profile URL.`);
+            alert(`Please enter your ${platformName} link first.\n\nClick on the input field to add your profile URL.`);
         }
     }
 
@@ -745,34 +617,34 @@
         }
     }
 
-    // Render social cards
-    function renderSocialGrid() {
+    // Render Cards
+    function renderGrid() {
         const grid = document.getElementById('socialGrid');
         grid.innerHTML = platforms.map((platform, index) => `
-            <div class="social-card" data-aos="fade-up" data-aos-delay="${index * 50}">
+            <div class="card">
                 <div class="card-header">
-                    <div class="icon-container">
-                        <i class="${platform.icon}" style="color: ${platform.color}; font-size: 2rem;"></i>
+                    <div class="icon-wrapper">
+                        <i class="${platform.icon}" style="color: ${platform.color}; font-size: 1.6rem;"></i>
                     </div>
-                    <span class="platform-order">#${String(index + 1).padStart(2, '0')}</span>
+                    <span class="order-badge">${String(index + 1).padStart(2, '0')}</span>
                 </div>
                 <h3>${platform.name}</h3>
                 <p>${platform.desc}</p>
-                <div class="link-field">
-                    <div class="link-label">
+                <div class="input-group">
+                    <div class="input-label">
                         <i class="fas fa-link"></i>
-                        <span>YOUR LINK</span>
+                        <span>Platform Link</span>
                     </div>
                     <input 
                         type="text" 
-                        class="link-input" 
+                        class="input-field" 
                         id="input_${platform.name}" 
                         value="${getLink(platform.name).replace(/"/g, '&quot;')}" 
                         placeholder="${platform.placeholder}"
                         onchange="saveLink('${platform.name}', this.value)"
                     >
                 </div>
-                <button class="btn-visit" onclick="openPlatform('${platform.name}')">
+                <button class="btn-link" onclick="openPlatform('${platform.name}')">
                     <i class="${platform.icon}"></i> Visit ${platform.name}
                     <i class="fas fa-arrow-right"></i>
                 </button>
@@ -780,7 +652,7 @@
         `).join('');
     }
 
-    renderSocialGrid();
+    renderGrid();
     updateFooterIcons();
 </script>
 </body>
