@@ -2,13 +2,18 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocialMediaBolapelangi2 | Premium Social Hub</title>
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="SocialMediaBolapelangi2 - Official Hub for All Social Media Platforms. Connect with us on Facebook, Instagram, WhatsApp, Twitter, Telegram, Bluesky, TikTok, YouTube, and Discord.">
+    <meta name="keywords" content="SocialMediaBolapelangi2, social media hub, backlink, facebook, instagram, whatsapp, twitter, telegram, bluesky, tiktok, youtube, discord">
+    <meta name="author" content="SocialMediaBolapelangi2">
+    <meta property="og:title" content="SocialMediaBolapelangi2 | Official Social Hub">
+    <meta property="og:description" content="Connect with SocialMediaBolapelangi2 on all major social platforms">
+    <meta property="og:type" content="website">
+    <title>SocialMediaBolapelangi2 | Official Social Media Hub</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,243 +22,180 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #f8fafc;
-            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #111827;
             overflow-x: hidden;
         }
 
-        /* Custom Cursor */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-        }
-
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            transition: all 0.15s ease;
-        }
-
-        /* Navigation */
-        .navbar {
+        /* Elegant Background Pattern */
+        .bg-pattern {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-            padding: 1rem 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 25% 50%, rgba(99, 102, 241, 0.02) 0%, transparent 50%),
+                              radial-gradient(circle at 75% 30%, rgba(139, 92, 246, 0.02) 0%, transparent 50%),
+                              radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .nav-container {
-            max-width: 1400px;
+        /* Main Container */
+        .container {
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .logo-text h1 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-text p {
-            font-size: 0.7rem;
-            color: #64748b;
-            letter-spacing: 0.5px;
-        }
-
-        /* Hero Section */
+        /* Header / Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 2rem 80px;
-            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
-            position: relative;
-            overflow: hidden;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 0 4rem;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: radial-gradient(circle at top right, rgba(102, 126, 234, 0.05), transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-container {
-            max-width: 1400px;
+        .hero-content {
+            max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
         }
 
-        .hero-content h2 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #0f172a, #334155);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-gradient-text {
-            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: #475569;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #1e293b;
-        }
-
-        .stat-item p {
-            font-size: 0.85rem;
-            color: #64748b;
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 2rem;
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
-        }
-
-        .floating-card {
-            position: absolute;
-            background: white;
-            padding: 1rem 1.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        /* Logo Badge */
+        .logo-badge {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(145deg, #6366f1, #8b5cf6, #ec489a);
+            border-radius: 32px;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 25px 40px -12px rgba(99, 102, 241, 0.4);
             animation: float 3s ease-in-out infinite;
         }
 
+        .logo-badge span {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+        }
+
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
+            0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
 
-        /* Section Styles */
-        .section {
-            padding: 80px 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+        /* Company Name with Gradient */
+        .company-name {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #111827, #4f46e5, #ec489a);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 4s linear infinite;
+            margin-bottom: 1rem;
         }
 
-        .section-header {
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4f46e5, #ec489a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            letter-spacing: 1px;
+        }
+
+        /* Section Title */
+        .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
 
-        .section-badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        .section-header h2 {
+        .section-title h2 {
             font-size: 2.5rem;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #111827, #4f46e5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .section-header p {
-            font-size: 1.1rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto;
+        .section-title p {
+            color: #6b7280;
+            font-size: 1rem;
         }
 
-        /* Social Grid - Professional Cards */
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #ec489a);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Social Grid - Premium Cards */
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin: 3rem 0 4rem;
         }
 
         .social-card {
             background: white;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 28px;
+            padding: 1.8rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
@@ -266,15 +208,15 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec489a);
             transform: scaleX(0);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .social-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border-color: rgba(102, 126, 234, 0.2);
+            box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(99, 102, 241, 0.2);
         }
 
         .social-card:hover::before {
@@ -283,26 +225,32 @@
 
         .card-header {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: flex-start;
             margin-bottom: 1.5rem;
         }
 
         .card-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
-            border-radius: 1rem;
+            width: 64px;
+            height: 64px;
+            background: #f3f4f6;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
+            transition: all 0.3s;
+        }
+
+        .social-card:hover .card-icon {
+            transform: scale(1.05);
         }
 
         .card-number {
             font-size: 0.8rem;
             font-weight: 600;
-            color: #94a3b8;
+            color: #9ca3af;
+            font-family: monospace;
         }
 
         .social-card h3 {
@@ -312,107 +260,102 @@
         }
 
         .social-card p {
-            color: #64748b;
-            font-size: 0.9rem;
+            color: #6b7280;
+            font-size: 0.85rem;
             line-height: 1.5;
             margin-bottom: 1.5rem;
         }
 
-        .link-input-group {
-            margin-bottom: 1rem;
+        /* Link Input Group - Professional & Clean */
+        .link-group {
+            margin-bottom: 1.2rem;
         }
 
-        .link-input-group label {
+        .link-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: 0.7rem;
             font-weight: 600;
-            color: #475569;
-            display: block;
-            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
         }
 
         .link-input {
             width: 100%;
-            padding: 0.6rem 0.8rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.8rem;
-            font-size: 0.8rem;
-            font-family: monospace;
-            background: #f8fafc;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-family: 'Inter', monospace;
+            background: #f9fafb;
             transition: all 0.2s;
+            color: #1f2937;
         }
 
         .link-input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #6366f1;
             background: white;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
-        .btn-platform {
+        .btn-visit {
             width: 100%;
-            padding: 0.8rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 0.9rem;
+            background: linear-gradient(135deg, #1f2937, #111827);
             border: none;
-            border-radius: 0.8rem;
+            border-radius: 16px;
             color: white;
             font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .btn-platform:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 1.5rem;
             transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
-            border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1rem;
+            gap: 0.6rem;
         }
 
-        /* Admin Panel */
+        .btn-visit i {
+            transition: transform 0.2s;
+        }
+
+        .btn-visit:hover {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -8px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-visit:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Admin Panel - Elegant */
         .admin-panel {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            border-radius: 2rem;
+            background: linear-gradient(135deg, #f9fafb, #ffffff);
+            border-radius: 32px;
             padding: 2rem;
-            margin-top: 4rem;
-            color: white;
+            margin: 3rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05);
         }
 
         .admin-panel h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admin-panel p {
+            color: #6b7280;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
         }
 
         .admin-controls {
@@ -423,330 +366,364 @@
         }
 
         .admin-btn {
-            padding: 0.8rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 0.8rem;
-            color: white;
+            padding: 0.7rem 1.2rem;
+            background: white;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .admin-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            border-color: #6366f1;
+            background: #f5f3ff;
+            transform: translateY(-2px);
+        }
+
+        /* Quick Links Table */
+        .quick-links {
+            background: #f9fafb;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .quick-links h4 {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .quick-link-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 12px;
+            font-size: 0.8rem;
         }
 
         /* Footer */
         .footer {
-            background: #0f172a;
+            background: #111827;
             color: white;
             padding: 3rem 2rem;
             margin-top: 4rem;
+            border-radius: 32px 32px 0 0;
         }
 
         .footer-content {
-            max-width: 1400px;
+            max-width: 1280px;
             margin: 0 auto;
             text-align: center;
         }
 
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1, #ec489a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .footer p {
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
         @media (max-width: 768px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .container {
+                padding: 0 1rem;
             }
-            .hero-stats {
-                justify-content: center;
+            .company-name {
+                font-size: 2.2rem;
             }
-            .section-header h2 {
+            .section-title h2 {
                 font-size: 1.8rem;
             }
-            .navbar {
-                padding: 0.8rem 0;
+            .social-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
-            .nav-container {
-                padding: 0 1rem;
+            .stats {
+                gap: 1.5rem;
+            }
+            .stat-number {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+<div class="bg-pattern"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <div class="logo-icon">🌈</div>
-                <div class="logo-text">
-                    <h1>SocialMediaBolapelangi2</h1>
-                    <p>Premium Social Hub</p>
-                </div>
-            </div>
-            <div style="font-size: 0.9rem; color: #64748b;">
-                <i class="fas fa-pen"></i> Edit Link di Bawah
-            </div>
-        </div>
-    </nav>
-
+<div class="container">
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content" data-aos="fade-right">
-                <h2>Kelola <span class="hero-gradient-text">8 Platform Sosial</span><br>Dalam Satu Dashboard</h2>
-                <p class="hero-description">SocialMediaBolapelangi2 menghadirkan solusi premium untuk mengelola semua akun media sosial Anda. Modern, profesional, dan mudah digunakan.</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <h3>8+</h3>
-                        <p>Platform Terintegrasi</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>24/7</h3>
-                        <p>Akses Real-time</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>100%</h3>
-                        <p>Customizable Links</p>
-                    </div>
-                </div>
+        <div class="hero-content">
+            <div class="logo-badge">
+                <span>🌈</span>
             </div>
-            <div class="hero-image" data-aos="fade-left">
-                <img src="https://placehold.co/500x400/eef2ff/667eea?text=Social+Hub+Premium" alt="Social Hub Premium">
+            <h1 class="company-name">SocialMediaBolapelangi2</h1>
+            <p class="tagline">Official Social Media Hub • Connect With Us Everywhere</p>
+            <p class="description">Your one-stop destination to connect with SocialMediaBolapelangi2 across all major platforms. Find us on 9 different social networks.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">9+</div>
+                    <div class="stat-label">PLATFORMS</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">ACTIVE</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">CUSTOMIZABLE</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Media Grid Section -->
-    <div class="section">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-badge"><i class="fas fa-globe"></i> Platform Terintegrasi</span>
-            <h2>Hubungkan Semua Akun Sosialmu</h2>
-            <p>Klik tombol di bawah untuk mengunjungi setiap platform. Anda bisa mengedit link sesuai akun sosial media Anda.</p>
-        </div>
-
-        <div class="social-grid" id="socialGrid">
-            <!-- Platform cards will be populated by JavaScript -->
-        </div>
-
-        <!-- Admin Panel for Link Management -->
-        <div class="admin-panel" data-aos="fade-up">
-            <h3><i class="fas fa-crown"></i> Panel Admin - Kelola Link Sosial Media</h3>
-            <p style="margin-bottom: 1rem; opacity: 0.8;">Isi link di bawah ini sesuai dengan akun sosial media Anda. Link akan tersimpan secara otomatis di browser Anda.</p>
-            <div id="adminControls"></div>
-            <div class="admin-controls" style="margin-top: 1.5rem;">
-                <button class="admin-btn" onclick="resetToDefault()"><i class="fas fa-undo"></i> Reset ke Default</button>
-                <button class="admin-btn" onclick="exportLinks()"><i class="fas fa-download"></i> Export Links</button>
-                <button class="admin-btn" onclick="showHelp()"><i class="fas fa-question-circle"></i> Panduan</button>
-            </div>
-        </div>
+    <!-- Social Media Section -->
+    <div class="section-title">
+        <h2>Connect With Us</h2>
+        <p>Choose your favorite platform and join our community</p>
+        <div class="section-divider"></div>
     </div>
 
-    <!-- Features Section -->
-    <div class="section">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-badge"><i class="fas fa-star"></i> Fitur Unggulan</span>
-            <h2>Mengapa Memilih Kami?</h2>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="feature-icon"><i class="fas fa-link"></i></div>
-                <h3>Link Customizable</h3>
-                <p>Edit semua link sesuai akun sosial media Anda kapan saja</p>
-            </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Analytics Ready</h3>
-                <p>Pantau performa link sosial media Anda</p>
-            </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>Fully Responsive</h3>
-                <p>Tampilan sempurna di semua device</p>
-            </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Data Tersimpan Lokal</h3>
-                <p>Link tersimpan aman di browser Anda</p>
-            </div>
+    <div class="social-grid" id="socialGrid"></div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel">
+        <h3><i class="fas fa-crown" style="color: #f59e0b;"></i> Admin Control Panel</h3>
+        <p>Kelola semua link sosial media SocialMediaBolapelangi2 dengan mudah. Edit link di bawah ini sesuai dengan akun resmi Anda.</p>
+        <div id="adminControls"></div>
+        <div class="admin-controls">
+            <button class="admin-btn" onclick="resetToDefault()"><i class="fas fa-undo-alt"></i> Reset All Links</button>
+            <button class="admin-btn" onclick="exportLinks()"><i class="fas fa-download"></i> Export Backup</button>
+            <button class="admin-btn" onclick="copyAllLinks()"><i class="fas fa-copy"></i> Copy All Links</button>
+            <button class="admin-btn" onclick="showGuide()"><i class="fas fa-question-circle"></i> Quick Guide</button>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="logo" style="justify-content: center; margin-bottom: 1.5rem;">
+            <div class="footer-logo">
                 <div class="logo-icon">🌈</div>
-                <div class="logo-text">
-                    <h1 style="color: white; background: none; -webkit-background-clip: unset;">SocialMediaBolapelangi2</h1>
-                </div>
+                <h3 style="font-weight: 700;">SocialMediaBolapelangi2</h3>
             </div>
-            <p style="opacity: 0.7;">Premium Social Media Hub — Kelola 8 platform dalam satu dashboard modern</p>
-            <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.8rem;">© 2025 SocialMediaBolapelangi2. All rights reserved.</p>
+            <p>Official Hub • Connect With Us on 9 Social Platforms</p>
+            <p style="margin-top: 1rem; font-size: 0.75rem;">© 2025 SocialMediaBolapelangi2 — All Rights Reserved</p>
         </div>
     </footer>
+</div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
+<script>
+    // Platform Data with Discord added as 9th platform
+    const platforms = [
+        { name: "Facebook", icon: "fab fa-facebook-f", color: "#1877f2", bgColor: "#1877f210", defaultLink: "https://facebook.com/bolapelangi2", placeholder: "https://facebook.com/usernameanda" },
+        { name: "Instagram", icon: "fab fa-instagram", color: "#e4405f", bgColor: "#e4405f10", defaultLink: "https://instagram.com/bolapelangi2", placeholder: "https://instagram.com/usernameanda" },
+        { name: "WhatsApp", icon: "fab fa-whatsapp", color: "#25D366", bgColor: "#25D36610", defaultLink: "https://wa.me/6281234567890", placeholder: "https://wa.me/62xxxx" },
+        { name: "Twitter", icon: "fab fa-twitter", color: "#1DA1F2", bgColor: "#1DA1F210", defaultLink: "https://twitter.com/bolapelangi2", placeholder: "https://twitter.com/usernameanda" },
+        { name: "Telegram", icon: "fab fa-telegram", color: "#26A5E4", bgColor: "#26A5E410", defaultLink: "https://t.me/bolapelangi2", placeholder: "https://t.me/usernameanda" },
+        { name: "Bluesky", icon: "fab fa-bluesky", color: "#1185fe", bgColor: "#1185fe10", defaultLink: "https://bsky.app/profile/bolapelangi2", placeholder: "https://bsky.app/profile/usernameanda" },
+        { name: "TikTok", icon: "fab fa-tiktok", color: "#000000", bgColor: "#00000010", defaultLink: "https://tiktok.com/@bolapelangi2", placeholder: "https://tiktok.com/@usernameanda" },
+        { name: "YouTube", icon: "fab fa-youtube", color: "#FF0000", bgColor: "#FF000010", defaultLink: "https://youtube.com/@bolapelangi2", placeholder: "https://youtube.com/@usernameanda" },
+        { name: "Discord", icon: "fab fa-discord", color: "#5865F2", bgColor: "#5865F210", defaultLink: "https://discord.gg/invitecode", placeholder: "https://discord.gg/invitecode atau https://discord.com/users/id" }
+    ];
 
-        // Platform Data
-        const platforms = [
-            { name: "Facebook", icon: "fab fa-facebook-f", color: "#1877f2", defaultLink: "https://facebook.com/username", placeholder: "https://facebook.com/usernameanda" },
-            { name: "Instagram", icon: "fab fa-instagram", color: "#e4405f", defaultLink: "https://instagram.com/username", placeholder: "https://instagram.com/usernameanda" },
-            { name: "WhatsApp", icon: "fab fa-whatsapp", color: "#25D366", defaultLink: "https://wa.me/628123456789", placeholder: "https://wa.me/62xxxx" },
-            { name: "Twitter", icon: "fab fa-twitter", color: "#1DA1F2", defaultLink: "https://twitter.com/username", placeholder: "https://twitter.com/usernameanda" },
-            { name: "Telegram", icon: "fab fa-telegram", color: "#26A5E4", defaultLink: "https://t.me/username", placeholder: "https://t.me/usernameanda" },
-            { name: "Bluesky", icon: "fab fa-bluesky", color: "#1185fe", defaultLink: "https://bsky.app/profile/username", placeholder: "https://bsky.app/profile/usernameanda" },
-            { name: "TikTok", icon: "fab fa-tiktok", color: "#000000", defaultLink: "https://tiktok.com/@username", placeholder: "https://tiktok.com/@usernameanda" },
-            { name: "YouTube", icon: "fab fa-youtube", color: "#FF0000", defaultLink: "https://youtube.com/@username", placeholder: "https://youtube.com/@usernameanda" }
-        ];
+    // Load saved links from localStorage
+    let savedLinks = {};
+    try {
+        const saved = localStorage.getItem('socialmedia_bolapelangi2_links');
+        if (saved) savedLinks = JSON.parse(saved);
+    } catch(e) {}
 
-        // Load saved links from localStorage
-        let savedLinks = {};
-        try {
-            const saved = localStorage.getItem('socialMediaBolapelangi2_links');
-            if (saved) savedLinks = JSON.parse(saved);
-        } catch(e) {}
+    function getLink(platformName) {
+        return savedLinks[platformName] || platforms.find(p => p.name === platformName).defaultLink;
+    }
 
-        function getLink(platformName) {
-            return savedLinks[platformName] || platforms.find(p => p.name === platformName).defaultLink;
-        }
-
-        function saveLink(platformName, link) {
-            savedLinks[platformName] = link;
-            localStorage.setItem('socialMediaBolapelangi2_links', JSON.stringify(savedLinks));
-            renderGrid();
-            renderAdminPanel();
-        }
-
-        function renderGrid() {
-            const grid = document.getElementById('socialGrid');
-            grid.innerHTML = platforms.map((platform, index) => `
-                <div class="social-card" data-aos="fade-up" data-aos-delay="${index * 50}">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, ${platform.color}10, ${platform.color}20);">
-                            <i class="${platform.icon}" style="color: ${platform.color}; font-size: 1.8rem;"></i>
-                        </div>
-                        <span class="card-number">#${index + 1}</span>
-                    </div>
-                    <h3>${platform.name}</h3>
-                    <p>Hubungkan dan kelola akun ${platform.name} Anda dengan mudah. Klik tombol di bawah untuk membuka.</p>
-                    <div class="link-input-group">
-                        <label><i class="fas fa-link"></i> Link ${platform.name}</label>
-                        <input type="text" class="link-input" id="input_${platform.name}" value="${getLink(platform.name)}" placeholder="${platform.placeholder}">
-                    </div>
-                    <button class="btn-platform" onclick="openPlatform('${platform.name}')">
-                        <i class="${platform.icon}"></i> Kunjungi ${platform.name}
-                    </button>
-                </div>
-            `).join('');
-        }
-
-        function renderAdminPanel() {
-            const adminDiv = document.getElementById('adminControls');
-            adminDiv.innerHTML = `
-                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                    ${platforms.map(platform => `
-                        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                            <span style="width: 100px;"><i class="${platform.icon}" style="color: ${platform.color};"></i> ${platform.name}</span>
-                            <input type="text" id="admin_${platform.name}" value="${getLink(platform.name)}" style="flex: 1; padding: 0.5rem; border-radius: 0.5rem; border: none; background: #334155; color: white;">
-                            <button onclick="updateFromAdmin('${platform.name}')" style="padding: 0.5rem 1rem; background: #667eea; border: none; border-radius: 0.5rem; color: white; cursor: pointer;">Simpan</button>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-        }
-
-        function openPlatform(platformName) {
-            const link = getLink(platformName);
-            if (link && link !== '#' && link !== '') {
-                window.open(link, '_blank', 'noopener,noreferrer');
-            } else {
-                alert(`⚠️ Link ${platformName} belum diisi. Silakan isi link Anda di kolom yang tersedia.`);
-            }
-        }
-
-        function updateFromAdmin(platformName) {
-            const input = document.getElementById(`admin_${platformName}`);
-            if (input) {
-                let newLink = input.value.trim();
-                if (newLink && !newLink.startsWith('http')) {
-                    newLink = 'https://' + newLink;
-                }
-                saveLink(platformName, newLink);
-                alert(`✅ Link ${platformName} telah diperbarui!`);
-            }
-        }
-
-        function resetToDefault() {
-            if (confirm('⚠️ Reset semua link ke default? Semua link yang sudah disimpan akan hilang.')) {
-                savedLinks = {};
-                localStorage.removeItem('socialMediaBolapelangi2_links');
-                renderGrid();
-                renderAdminPanel();
-                alert('✅ Semua link telah direset ke default!');
-            }
-        }
-
-        function exportLinks() {
-            const data = JSON.stringify(savedLinks, null, 2);
-            const blob = new Blob([data], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'social_media_links_backup.json';
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
-        function showHelp() {
-            alert('📖 Panduan Penggunaan:\n\n1. Setiap kartu platform memiliki kolom input link\n2. Isi dengan link akun sosial media Anda\n3. Klik tombol "Kunjungi" untuk membuka link\n4. Link akan tersimpan otomatis di browser Anda\n5. Gunakan Panel Admin untuk edit cepat semua link\n\n💡 Tips: Pastikan link menggunakan format https://...');
-        }
-
-        // Update from card input on blur
-        function attachGlobalListeners() {
-            setInterval(() => {
-                platforms.forEach(platform => {
-                    const input = document.getElementById(`input_${platform.name}`);
-                    if (input && input.value !== getLink(platform.name)) {
-                        saveLink(platform.name, input.value);
-                    }
-                });
-            }, 1000);
-        }
-
-        // Custom cursor
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-
-        document.addEventListener('mousemove', (e) => {
-            cursorDot.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
-            cursorOutline.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
-        });
-
-        document.addEventListener('mouseleave', () => {
-            cursorDot.style.opacity = '0';
-            cursorOutline.style.opacity = '0';
-        });
-
-        document.addEventListener('mouseenter', () => {
-            cursorDot.style.opacity = '1';
-            cursorOutline.style.opacity = '1';
-        });
-
-        // Initialize
+    function saveLink(platformName, link) {
+        savedLinks[platformName] = link;
+        localStorage.setItem('socialmedia_bolapelangi2_links', JSON.stringify(savedLinks));
         renderGrid();
         renderAdminPanel();
-        attachGlobalListeners();
+    }
 
-        // Style for cursor
-        const style = document.createElement('style');
-        style.textContent = `
-            .cursor-dot, .cursor-outline { pointer-events: none; }
-            .btn-platform, .admin-btn, .social-card, input, button { cursor: pointer; }
+    function renderGrid() {
+        const grid = document.getElementById('socialGrid');
+        grid.innerHTML = platforms.map((platform, index) => `
+            <div class="social-card" data-aos="fade-up">
+                <div class="card-header">
+                    <div class="card-icon" style="background: ${platform.bgColor};">
+                        <i class="${platform.icon}" style="color: ${platform.color}; font-size: 1.8rem;"></i>
+                    </div>
+                    <span class="card-number">#${String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3>${platform.name}</h3>
+                <p>Connect with SocialMediaBolapelangi2 on ${platform.name}. Follow, subscribe, and join our community.</p>
+                <div class="link-group">
+                    <div class="link-label">
+                        <i class="fas fa-link"></i>
+                        <span>LINK ${platform.name.toUpperCase()}</span>
+                    </div>
+                    <input type="text" class="link-input" id="input_${platform.name}" value="${getLink(platform.name).replace(/"/g, '&quot;')}" placeholder="${platform.placeholder}">
+                </div>
+                <button class="btn-visit" onclick="openPlatform('${platform.name}')">
+                    <i class="${platform.icon}"></i> Visit ${platform.name}
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        `).join('');
+        
+        // Auto-save when input changes
+        platforms.forEach(platform => {
+            const input = document.getElementById(`input_${platform.name}`);
+            if (input) {
+                input.addEventListener('change', function() {
+                    saveLink(platform.name, this.value);
+                    showToast(`✅ Link ${platform.name} saved!`);
+                });
+            }
+        });
+    }
+
+    function renderAdminPanel() {
+        const adminDiv = document.getElementById('adminControls');
+        adminDiv.innerHTML = `
+            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                ${platforms.map(platform => `
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 0.5rem; background: #f9fafb; border-radius: 16px;">
+                        <div style="width: 120px; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="${platform.icon}" style="color: ${platform.color}; width: 24px;"></i>
+                            <span style="font-weight: 600;">${platform.name}</span>
+                        </div>
+                        <input type="text" id="admin_${platform.name}" value="${getLink(platform.name).replace(/"/g, '&quot;')}" style="flex: 1; padding: 0.6rem 1rem; border: 1.5px solid #e5e7eb; border-radius: 12px; background: white; font-size: 0.8rem;">
+                        <button onclick="updateFromAdmin('${platform.name}')" style="padding: 0.6rem 1.2rem; background: #4f46e5; border: none; border-radius: 12px; color: white; cursor: pointer; font-weight: 500;">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                    </div>
+                `).join('')}
+            </div>
         `;
-        document.head.appendChild(style);
-    </script>
+    }
+
+    function openPlatform(platformName) {
+        const link = getLink(platformName);
+        if (link && link !== '#' && link.trim() !== '') {
+            let finalLink = link.trim();
+            if (!finalLink.startsWith('http://') && !finalLink.startsWith('https://')) {
+                finalLink = 'https://' + finalLink;
+            }
+            window.open(finalLink, '_blank', 'noopener,noreferrer');
+        } else {
+            alert(`⚠️ Please fill in your ${platformName} link first.`);
+        }
+    }
+
+    function updateFromAdmin(platformName) {
+        const input = document.getElementById(`admin_${platformName}`);
+        if (input) {
+            saveLink(platformName, input.value);
+            showToast(`✅ ${platformName} link updated successfully!`);
+        }
+    }
+
+    function resetToDefault() {
+        if (confirm('⚠️ Reset all links to default? All your saved links will be lost.')) {
+            savedLinks = {};
+            localStorage.removeItem('socialmedia_bolapelangi2_links');
+            renderGrid();
+            renderAdminPanel();
+            showToast('✅ All links have been reset to default!');
+        }
+    }
+
+    function exportLinks() {
+        const data = JSON.stringify(savedLinks, null, 2);
+        const blob = new Blob([data], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'socialmedia_bolapelangi2_backup.json';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('📁 Links exported successfully!');
+    }
+
+    function copyAllLinks() {
+        let text = "SocialMediaBolapelangi2 Links:\n\n";
+        platforms.forEach(p => {
+            text += `${p.name}: ${getLink(p.name)}\n`;
+        });
+        navigator.clipboard.writeText(text);
+        showToast('📋 All links copied to clipboard!');
+    }
+
+    function showGuide() {
+        alert('📖 QUICK GUIDE\n\n1. Edit any link by typing in the input field\n2. Links auto-save to your browser\n3. Click "Visit" button to open the platform\n4. Use Admin Panel for quick editing\n5. Export backup to save your links\n\n💡 TIP: Make sure links use correct format (https://...)');
+    }
+
+    function showToast(message) {
+        // Create temporary toast notification
+        const toast = document.createElement('div');
+        toast.textContent = message;
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1f2937;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            z-index: 9999;
+            animation: fadeInOut 2s ease forwards;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2);
+        `;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2000);
+    }
+
+    // Add animation style
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            15% { opacity: 1; transform: translateY(0); }
+            85% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize
+    renderGrid();
+    renderAdminPanel();
+</script>
 </body>
 </html>
