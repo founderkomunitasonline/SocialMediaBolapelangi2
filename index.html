@@ -2,11 +2,13 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>BOLAPELANGI2 • Hub Media Sosial Terlengkap</title>
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialMediaBolapelangi2 | Premium Social Hub</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,501 +17,736 @@
         }
 
         body {
-            font-family: 'Inter', 'Poppins', sans-serif;
-            background: linear-gradient(145deg, #fff9f0 0%, #ffe6f0 50%, #e6f0ff 100%);
-            color: #1a1e2b;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-            position: relative;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
         }
 
-        /* Pelangi background animation */
-        body::before {
-            content: '';
+        /* Custom Cursor */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.15s ease;
+        }
+
+        /* Navigation */
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, 
-                rgba(255,0,0,0.03), 
-                rgba(255,165,0,0.03), 
-                rgba(255,255,0,0.03), 
-                rgba(0,255,0,0.03), 
-                rgba(0,127,255,0.03), 
-                rgba(0,0,255,0.03), 
-                rgba(75,0,130,0.03));
-            pointer-events: none;
-            z-index: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 1rem 0;
         }
 
-        .container {
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
-            position: relative;
-            z-index: 1;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Rainbow header */
-        .rainbow-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .rainbow-text {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, 
-                #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
-            background-size: 300% 300%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: rainbow 3s ease infinite;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-        }
-
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #475569;
-            max-width: 700px;
-            margin: 0 auto;
-            font-weight: 500;
-        }
-
-        .badge-rainbow {
-            display: inline-block;
-            background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
-            padding: 0.3rem 1.5rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        /* Social Grid */
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: #64748b;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(102, 126, 234, 0.05), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #0f172a, #334155);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1e293b;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 2rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Social Grid - Professional Cards */
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 3rem 0 4rem;
+            margin-top: 2rem;
         }
 
-        /* Cards with rainbow border */
         .social-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(2px);
-            border-radius: 2rem;
-            padding: 1.8rem 1.5rem 2rem;
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-            border: 2px solid transparent;
-            background-clip: padding-box;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
-            cursor: default;
+            overflow: hidden;
         }
 
         .social-card::before {
             content: '';
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
-            border-radius: 2rem;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .social-card:hover::before {
-            opacity: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .social-card:hover {
-            transform: translateY(-12px);
-            background: #ffffff;
-            box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        .social-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
         }
 
         .card-icon {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            width: fit-content;
-        }
-
-        .card-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -0.3px;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-
-        .card-desc {
-            color: #475569;
-            margin: 0.5rem 0 1rem;
-            font-size: 0.95rem;
-            line-height: 1.45;
-        }
-
-        .stat {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #5b6e8c;
-            margin-top: 0.5rem;
-            border-top: 1px solid #e9eef3;
-            padding-top: 0.8rem;
-        }
-
-        .btn-connect {
-            margin-top: 1.3rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 60px;
-            padding: 0.7rem 1.5rem;
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            width: fit-content;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-connect i {
-            font-size: 0.85rem;
-            transition: transform 0.2s;
-        }
-
-        .btn-connect:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-connect:hover i {
-            transform: translateX(5px);
-        }
-
-        /* Platform Colors */
-        .fb-color { color: #1877f2; }
-        .ig-color { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
-        .wa-color { color: #25D366; }
-        .tw-color { color: #1DA1F2; }
-        .tg-color { color: #26A5E4; }
-        .bsky-color { color: #1185fe; }
-        .tt-color { color: #000000; }
-        .yt-color { color: #FF0000; }
-
-        /* Rainbow Trending Section */
-        .trend-section {
-            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,245,235,0.95));
-            backdrop-filter: blur(8px);
-            border-radius: 2rem;
-            padding: 1.8rem 2rem;
-            margin: 2rem 0 3rem;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        .trend-section::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
-            border-radius: 2rem;
-            z-index: -1;
-            opacity: 0.5;
-        }
-
-        .trend-header h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .trend-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: space-between;
-            margin-top: 1.5rem;
-        }
-
-        .trend-item {
-            background: white;
-            border-radius: 1.2rem;
-            padding: 0.8rem 1.2rem;
-            flex: 1 1 160px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 1px solid #ffe0b5;
-        }
-
-        .trend-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-color: #ffa500;
-        }
-
-        /* Live Preview Cards */
-        .live-preview {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .preview-card {
-            flex: 1;
-            background: white;
-            border-radius: 1.5rem;
-            padding: 1.2rem 1.5rem;
-            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.15);
-            border: 1px solid rgba(255,165,0,0.3);
-            transition: all 0.3s;
-        }
-
-        .preview-card:hover {
-            transform: translateY(-5px);
-            border-color: #ffa500;
-        }
-
-        /* Floating Rainbow Animation */
-        .floating-rainbow {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
-            border-radius: 50%;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 2rem;
+        }
+
+        .card-number {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        .social-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-input-group {
+            margin-bottom: 1rem;
+        }
+
+        .link-input-group label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #475569;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .link-input {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.8rem;
+            font-size: 0.8rem;
+            font-family: monospace;
+            background: #f8fafc;
+            transition: all 0.2s;
+        }
+
+        .link-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+        }
+
+        .btn-platform {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 0.8rem;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
             cursor: pointer;
-            animation: float 3s ease-in-out infinite;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            z-index: 100;
-            transition: transform 0.3s;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .floating-rainbow:hover {
-            transform: scale(1.1);
+        .btn-platform:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
 
-        .floating-rainbow i {
-            font-size: 28px;
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-radius: 2rem;
+            padding: 2rem;
+            margin-top: 4rem;
             color: white;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        .admin-panel h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .admin-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .admin-btn {
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.8rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .admin-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         /* Footer */
         .footer {
-            text-align: center;
+            background: #0f172a;
+            color: white;
+            padding: 3rem 2rem;
             margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(255,165,0,0.3);
-            color: #5b6e8c;
-            font-size: 0.85rem;
         }
 
-        @media (max-width: 720px) {
-            .container { padding: 1rem; }
-            .rainbow-text { font-size: 2rem; }
-            .card-title { font-size: 1.4rem; }
-            .social-grid { gap: 1.2rem; }
-            .trend-cards { gap: 0.8rem; }
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            .navbar {
+                padding: 0.8rem 0;
+            }
+            .nav-container {
+                padding: 0 1rem;
+            }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="rainbow-header">
-        <span class="badge-rainbow"><i class="fas fa-rainbow"></i> Warna-Warni Dunia Sosial 🌈</span>
-        <h1 class="rainbow-text">BOLAPELANGI2</h1>
-        <p class="tagline">✨ 8 Platform Media Sosial Terlengkap dalam Satu Tempat ✨<br>🌈 Warna-warni Koneksi Tanpa Batas 🌈</p>
-    </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <!-- Grid Media Sosial Lengkap -->
-    <div class="social-grid">
-        <!-- Facebook -->
-        <div class="social-card">
-            <div class="card-icon"><i class="fab fa-facebook fa-3x fb-color"></i></div>
-            <div class="card-title">Facebook</div>
-            <div class="card-desc">Temukan teman, bagikan cerita, dan ikuti komunitas global. Hubungan semakin erat.</div>
-            <div class="stat"><span><i class="fas fa-users"></i> 3M+ aktif</span><span><i class="fas fa-newspaper"></i> Feed & Grup</span></div>
-            <button class="btn-connect" onclick="showPlatformAlert('Facebook')"><span>Kunjungi Hub</span> <i class="fas fa-arrow-right"></i></button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🌈</div>
+                <div class="logo-text">
+                    <h1>SocialMediaBolapelangi2</h1>
+                    <p>Premium Social Hub</p>
+                </div>
+            </div>
+            <div style="font-size: 0.9rem; color: #64748b;">
+                <i class="fas fa-pen"></i> Edit Link di Bawah
+            </div>
         </div>
-        <!-- Instagram -->
-        <div class="social-card">
-            <div class="card-icon"><i class="fab fa-instagram fa-3x ig-color"></i></div>
-            <div class="card-title">Instagram</div>
-            <div class="card-desc">Visual stories, reels, dan inspirasi aesthetic. Abadikan momen terbaikmu.</div>
-            <div class="stat"><span><i class="fas fa-camera"></i> Stories & Reels</span><span><i class="fas fa-heart"></i> 600M+ daily</span></div>
-            <button class="btn-connect" onclick="showPlatformAlert('Instagram')"><span>Explore Now</span> <i class="fas fa-arrow-right"></i></button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right">
+                <h2>Kelola <span class="hero-gradient-text">8 Platform Sosial</span><br>Dalam Satu Dashboard</h2>
+                <p class="hero-description">SocialMediaBolapelangi2 menghadirkan solusi premium untuk mengelola semua akun media sosial Anda. Modern, profesional, dan mudah digunakan.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>8+</h3>
+                        <p>Platform Terintegrasi</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Akses Real-time</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Customizable Links</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="https://placehold.co/500x400/eef2ff/667eea?text=Social+Hub+Premium" alt="Social Hub Premium">
+            </div>
         </div>
-        <!-- WhatsApp -->
-        <div class="social-card">
-            <div class="card-icon"><i class="fab fa-whatsapp fa-3x wa-color"></i></div>
-            <div class="card-title">WhatsApp</div>
-            <div class="card-desc">Pesan pribadi, grup, panggilan video dengan enkripsi end-to-end. Tetap terhubung.</div>
-            <div class="stat"><span><i class="fas fa-comment-dots"></i> Status & Chat</span><span><i class="fas fa-lock"></i> Privasi</span></div>
-            <button class="btn-connect" onclick="showPlatformAlert('WhatsApp')"><span>Chat Sekarang</span> <i class="fas fa-arrow-right"></i></button>
+    </section>
+
+    <!-- Social Media Grid Section -->
+    <div class="section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge"><i class="fas fa-globe"></i> Platform Terintegrasi</span>
+            <h2>Hubungkan Semua Akun Sosialmu</h2>
+            <p>Klik tombol di bawah untuk mengunjungi setiap platform. Anda bisa mengedit link sesuai akun sosial media Anda.</p>
         </div>
-        <!-- Twitter -->
-        <div class="social-card">
-            <div class="card-icon"><i class="fab fa-twitter fa-3x tw-color"></i></div>
-            <div class="card-title">Twitter / X</div>
-            <div class="card-desc">Berita terkini, thread viral, dan opini publik. Ikuti trending topic dunia.</div>
-            <div class="stat"><span><i class="fas fa-chart-line"></i> Trending</span><span><i class="fas fa-retweet"></i> Retweet</span></div>
-            <button class="btn-connect" onclick="showPlatformAlert('Twitter')"><span>Jelajahi</span> <i class="fas fa-arrow-right"></i></button>
+
+        <div class="social-grid" id="socialGrid">
+            <!-- Platform cards will be populated by JavaScript -->
         </div>
-        <!-- Telegram -->
-        <div class="social-card">
-            <div class="card-icon"><i class="fab fa-telegram fa-3x tg-color"></i></div>
-            <div class="card-title">Telegram</div>
-            <div class="card-desc">Saluran, bot, grup super besar. Cloud-based & super cepat untuk berbagi file.</div>
-            <div class="stat"><span><i class="fas fa-robot"></i> Bot Pintar</span><span><i class="fas fa-cloud"></i> 2GB file</span></div>
-            <button class="btn-connect" onclick="showPlatformAlert('Telegram')"><span>Gabung Channel</span> <i class="fas fa-arrow-right"></i></button>
-        </div>
-        <!-- Bluesky -->
-        <div class="social-card">
-            <div class="card-icon"><i class="fab fa-bluesky fa-3x bsky-color"></i></div>
-            <div class="card-title">Bluesky</div>
-            <div class="card-desc">Jejaring sosial desentralisasi, atmosfer segar dan bebas. Temukan komunitas baru.</div>
-            <div class="stat"><span><i class="fas fa-feather-alt"></i> At-protocol</span><span><i class="fas fa-globe"></i> Federasi</span></div>
-            <button class="btn-connect" onclick="showPlatformAlert('Bluesky')"><span>Jelajahi Sky</span> <i class="fas fa-arrow-right"></i></button>
-        </div>
-        <!-- TikTok -->
-        <div class="social-card">
-            <div class="card-icon"><i class="fab fa-tiktok fa-3x tt-color"></i></div>
-            <div class="card-title">TikTok</div>
-            <div class="card-desc">Video pendek viral, tantangan seru, dan alur kreatif tanpa batas. #ForYourPage</div>
-            <div class="stat"><span><i class="fas fa-music"></i> Viral Hits</span><span><i class="fas fa-video"></i> 1.5B+ users</span></div>
-            <button class="btn-connect" onclick="showPlatformAlert('TikTok')"><span>Mulai scroll</span> <i class="fas fa-arrow-right"></i></button>
-        </div>
-        <!-- YouTube -->
-        <div class="social-card">
-            <div class="card-icon"><i class="fab fa-youtube fa-3x yt-color"></i></div>
-            <div class="card-title">YouTube</div>
-            <div class="card-desc">Streaming video, vlog, tutorial musik dan konten eksklusif dari creator favorit.</div>
-            <div class="stat"><span><i class="fas fa-play-circle"></i> 2.5B+ users</span><span><i class="fas fa-subscribe"></i> Subscribe</span></div>
-            <button class="btn-connect" onclick="showPlatformAlert('YouTube')"><span>Tonton Sekarang</span> <i class="fas fa-arrow-right"></i></button>
+
+        <!-- Admin Panel for Link Management -->
+        <div class="admin-panel" data-aos="fade-up">
+            <h3><i class="fas fa-crown"></i> Panel Admin - Kelola Link Sosial Media</h3>
+            <p style="margin-bottom: 1rem; opacity: 0.8;">Isi link di bawah ini sesuai dengan akun sosial media Anda. Link akan tersimpan secara otomatis di browser Anda.</p>
+            <div id="adminControls"></div>
+            <div class="admin-controls" style="margin-top: 1.5rem;">
+                <button class="admin-btn" onclick="resetToDefault()"><i class="fas fa-undo"></i> Reset ke Default</button>
+                <button class="admin-btn" onclick="exportLinks()"><i class="fas fa-download"></i> Export Links</button>
+                <button class="admin-btn" onclick="showHelp()"><i class="fas fa-question-circle"></i> Panduan</button>
+            </div>
         </div>
     </div>
 
-    <!-- Rainbow Trending Section -->
-    <div class="trend-section">
-        <div class="trend-header">
-            <h3><i class="fas fa-rainbow"></i> 🌈 Trending Pelangi 🌈</h3>
-            <p style="color: #ff6b6b; margin-top: 5px;">Update real-time · Warna-warni trending dari seluruh platform</p>
+    <!-- Features Section -->
+    <div class="section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge"><i class="fas fa-star"></i> Fitur Unggulan</span>
+            <h2>Mengapa Memilih Kami?</h2>
         </div>
-        <div class="trend-cards">
-            <div class="trend-item"><div class="trend-icon"><i class="fab fa-twitter tw-color"></i></div><div class="trend-name">#Bolapelangi2</div><div class="trend-hashtag">50.2K posts</div></div>
-            <div class="trend-item"><div class="trend-icon"><i class="fab fa-tiktok tt-color"></i></div><div class="trend-name">#RainbowChallenge</div><div class="trend-hashtag">230K videos</div></div>
-            <div class="trend-item"><div class="trend-icon"><i class="fab fa-instagram ig-color"></i></div><div class="trend-name">#PelangiNusantara</div><div class="trend-hashtag">98.4K posts</div></div>
-            <div class="trend-item"><div class="trend-icon"><i class="fab fa-youtube yt-color"></i></div><div class="trend-name">Warna-Warni Cover</div><div class="trend-hashtag">Trending #1</div></div>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon"><i class="fas fa-link"></i></div>
+                <h3>Link Customizable</h3>
+                <p>Edit semua link sesuai akun sosial media Anda kapan saja</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Analytics Ready</h3>
+                <p>Pantau performa link sosial media Anda</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Fully Responsive</h3>
+                <p>Tampilan sempurna di semua device</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Data Tersimpan Lokal</h3>
+                <p>Link tersimpan aman di browser Anda</p>
+            </div>
         </div>
     </div>
 
-    <!-- Live Preview Interaktif -->
-    <div class="live-preview">
-        <div class="preview-card">
-            <h4><i class="fab fa-whatsapp wa-color"></i> 💬 Pesan Pelangi</h4>
-            <div class="msg-row"><i class="fas fa-user-circle fa-lg"></i><div><div class="msg-bubble">Halo! Selamat datang di BOLAPELANGI2! 🌈✨</div><div class="msg-time">Baru saja</div></div></div>
-            <div class="msg-row"><i class="fas fa-user-circle fa-lg" style="color:#ff6b6b"></i><div><div class="msg-bubble">Wah keren banget! Lengkap semua platform sosialnya!</div><div class="msg-time">1 menit lalu</div></div></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="logo" style="justify-content: center; margin-bottom: 1.5rem;">
+                <div class="logo-icon">🌈</div>
+                <div class="logo-text">
+                    <h1 style="color: white; background: none; -webkit-background-clip: unset;">SocialMediaBolapelangi2</h1>
+                </div>
+            </div>
+            <p style="opacity: 0.7;">Premium Social Media Hub — Kelola 8 platform dalam satu dashboard modern</p>
+            <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.8rem;">© 2025 SocialMediaBolapelangi2. All rights reserved.</p>
         </div>
-        <div class="preview-card">
-            <h4><i class="fab fa-telegram tg-color"></i> 📢 Channel Update</h4>
-            <div class="msg-row"><i class="fas fa-bolt" style="color:#ffa500"></i><div><div class="msg-bubble"><strong>🌈 BOLAPELANGI2</strong> Kini hadir dengan 8 platform sosial dalam satu dashboard!</div></div></div>
-        </div>
-        <div class="preview-card">
-            <h4><i class="fab fa-twitter tw-color"></i> 🐦 X Feed</h4>
-            <div class="msg-row"><i class="fab fa-twitter"></i><div><div class="msg-bubble"><strong>@bolapelangi2</strong> · 5 menit<br>Platform sosial terlengkap sudah hadir! Cek sekarang juga! #BOLAPELANGI2 🚀🌈</div></div></div>
-        </div>
-    </div>
+    </footer>
 
-    <!-- Floating Rainbow Button -->
-    <div class="floating-rainbow" onclick="showWelcomeMessage()">
-        <i class="fas fa-rainbow"></i>
-    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
 
-    <div class="footer">
-        <p><i class="fas fa-rainbow"></i> <strong>BOLAPELANGI2</strong> — Hubungan terlengkap untuk Facebook, Instagram, WhatsApp, Twitter, Telegram, Bluesky, TikTok, YouTube <i class="fas fa-rainbow"></i></p>
-        <p style="margin-top: 8px;">🌈 Warna-warni sosial media dalam satu genggaman | 🌟 Ikuti tren terupdate bersama kami</p>
-        <p style="margin-top: 5px; font-size: 0.75rem;">© 2025 BOLAPELANGI2 · All Platforms Complete</p>
-    </div>
-</div>
+        // Platform Data
+        const platforms = [
+            { name: "Facebook", icon: "fab fa-facebook-f", color: "#1877f2", defaultLink: "https://facebook.com/username", placeholder: "https://facebook.com/usernameanda" },
+            { name: "Instagram", icon: "fab fa-instagram", color: "#e4405f", defaultLink: "https://instagram.com/username", placeholder: "https://instagram.com/usernameanda" },
+            { name: "WhatsApp", icon: "fab fa-whatsapp", color: "#25D366", defaultLink: "https://wa.me/628123456789", placeholder: "https://wa.me/62xxxx" },
+            { name: "Twitter", icon: "fab fa-twitter", color: "#1DA1F2", defaultLink: "https://twitter.com/username", placeholder: "https://twitter.com/usernameanda" },
+            { name: "Telegram", icon: "fab fa-telegram", color: "#26A5E4", defaultLink: "https://t.me/username", placeholder: "https://t.me/usernameanda" },
+            { name: "Bluesky", icon: "fab fa-bluesky", color: "#1185fe", defaultLink: "https://bsky.app/profile/username", placeholder: "https://bsky.app/profile/usernameanda" },
+            { name: "TikTok", icon: "fab fa-tiktok", color: "#000000", defaultLink: "https://tiktok.com/@username", placeholder: "https://tiktok.com/@usernameanda" },
+            { name: "YouTube", icon: "fab fa-youtube", color: "#FF0000", defaultLink: "https://youtube.com/@username", placeholder: "https://youtube.com/@usernameanda" }
+        ];
 
-<script>
-    function showPlatformAlert(platform) {
-        const messages = {
-            'Facebook': '📘 Menuju Facebook — Temukan teman dan komunitas seru!',
-            'Instagram': '📸 Instagram — Bagikan momen colorful-mu! 🌈',
-            'WhatsApp': '💚 WhatsApp — Chat dengan keluarga dan teman!',
-            'Twitter': '🐦 Twitter / X — Ikuti trending topic terkini!',
-            'Telegram': '📡 Telegram — Gabung channel & grup seru!',
-            'Bluesky': '☁️ Bluesky — Social media masa depan!',
-            'TikTok': '🎵 TikTok — Video viral menantimu!',
-            'YouTube': '📺 YouTube — Tonton video favoritmu!'
-        };
-        alert(`✨ ${messages[platform] || `Menuju ${platform}`} ✨\n\n🌈 BOLAPELANGI2 — Hub Media Sosial Terlengkap`);
-    }
+        // Load saved links from localStorage
+        let savedLinks = {};
+        try {
+            const saved = localStorage.getItem('socialMediaBolapelangi2_links');
+            if (saved) savedLinks = JSON.parse(saved);
+        } catch(e) {}
 
-    function showWelcomeMessage() {
-        alert('🌈✨ SELAMAT DATANG DI BOLAPELANGI2 ✨🌈\n\n📱 8 Platform Media Sosial Terlengkap:\n✅ Facebook\n✅ Instagram\n✅ WhatsApp\n✅ Twitter\n✅ Telegram\n✅ Bluesky\n✅ TikTok\n✅ YouTube\n\n🎨 Warna-warni koneksi tanpa batas!');
-    }
+        function getLink(platformName) {
+            return savedLinks[platformName] || platforms.find(p => p.name === platformName).defaultLink;
+        }
 
-    // Efek rainbow pada hover card
-    const cards = document.querySelectorAll('.social-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-12px)';
+        function saveLink(platformName, link) {
+            savedLinks[platformName] = link;
+            localStorage.setItem('socialMediaBolapelangi2_links', JSON.stringify(savedLinks));
+            renderGrid();
+            renderAdminPanel();
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('socialGrid');
+            grid.innerHTML = platforms.map((platform, index) => `
+                <div class="social-card" data-aos="fade-up" data-aos-delay="${index * 50}">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, ${platform.color}10, ${platform.color}20);">
+                            <i class="${platform.icon}" style="color: ${platform.color}; font-size: 1.8rem;"></i>
+                        </div>
+                        <span class="card-number">#${index + 1}</span>
+                    </div>
+                    <h3>${platform.name}</h3>
+                    <p>Hubungkan dan kelola akun ${platform.name} Anda dengan mudah. Klik tombol di bawah untuk membuka.</p>
+                    <div class="link-input-group">
+                        <label><i class="fas fa-link"></i> Link ${platform.name}</label>
+                        <input type="text" class="link-input" id="input_${platform.name}" value="${getLink(platform.name)}" placeholder="${platform.placeholder}">
+                    </div>
+                    <button class="btn-platform" onclick="openPlatform('${platform.name}')">
+                        <i class="${platform.icon}"></i> Kunjungi ${platform.name}
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function renderAdminPanel() {
+            const adminDiv = document.getElementById('adminControls');
+            adminDiv.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    ${platforms.map(platform => `
+                        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                            <span style="width: 100px;"><i class="${platform.icon}" style="color: ${platform.color};"></i> ${platform.name}</span>
+                            <input type="text" id="admin_${platform.name}" value="${getLink(platform.name)}" style="flex: 1; padding: 0.5rem; border-radius: 0.5rem; border: none; background: #334155; color: white;">
+                            <button onclick="updateFromAdmin('${platform.name}')" style="padding: 0.5rem 1rem; background: #667eea; border: none; border-radius: 0.5rem; color: white; cursor: pointer;">Simpan</button>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function openPlatform(platformName) {
+            const link = getLink(platformName);
+            if (link && link !== '#' && link !== '') {
+                window.open(link, '_blank', 'noopener,noreferrer');
+            } else {
+                alert(`⚠️ Link ${platformName} belum diisi. Silakan isi link Anda di kolom yang tersedia.`);
+            }
+        }
+
+        function updateFromAdmin(platformName) {
+            const input = document.getElementById(`admin_${platformName}`);
+            if (input) {
+                let newLink = input.value.trim();
+                if (newLink && !newLink.startsWith('http')) {
+                    newLink = 'https://' + newLink;
+                }
+                saveLink(platformName, newLink);
+                alert(`✅ Link ${platformName} telah diperbarui!`);
+            }
+        }
+
+        function resetToDefault() {
+            if (confirm('⚠️ Reset semua link ke default? Semua link yang sudah disimpan akan hilang.')) {
+                savedLinks = {};
+                localStorage.removeItem('socialMediaBolapelangi2_links');
+                renderGrid();
+                renderAdminPanel();
+                alert('✅ Semua link telah direset ke default!');
+            }
+        }
+
+        function exportLinks() {
+            const data = JSON.stringify(savedLinks, null, 2);
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'social_media_links_backup.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function showHelp() {
+            alert('📖 Panduan Penggunaan:\n\n1. Setiap kartu platform memiliki kolom input link\n2. Isi dengan link akun sosial media Anda\n3. Klik tombol "Kunjungi" untuk membuka link\n4. Link akan tersimpan otomatis di browser Anda\n5. Gunakan Panel Admin untuk edit cepat semua link\n\n💡 Tips: Pastikan link menggunakan format https://...');
+        }
+
+        // Update from card input on blur
+        function attachGlobalListeners() {
+            setInterval(() => {
+                platforms.forEach(platform => {
+                    const input = document.getElementById(`input_${platform.name}`);
+                    if (input && input.value !== getLink(platform.name)) {
+                        saveLink(platform.name, input.value);
+                    }
+                });
+            }, 1000);
+        }
+
+        // Custom cursor
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        document.addEventListener('mousemove', (e) => {
+            cursorDot.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+            cursorOutline.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
         });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-        });
-    });
 
-    console.log("🌈 BOLAPELANGI2 — Complete Social Media Hub Loaded! 🌈");
-    console.log("📱 8 Platforms: Facebook, Instagram, WhatsApp, Twitter, Telegram, Bluesky, TikTok, YouTube");
-</script>
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.opacity = '0';
+            cursorOutline.style.opacity = '0';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            cursorDot.style.opacity = '1';
+            cursorOutline.style.opacity = '1';
+        });
+
+        // Initialize
+        renderGrid();
+        renderAdminPanel();
+        attachGlobalListeners();
+
+        // Style for cursor
+        const style = document.createElement('style');
+        style.textContent = `
+            .cursor-dot, .cursor-outline { pointer-events: none; }
+            .btn-platform, .admin-btn, .social-card, input, button { cursor: pointer; }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
