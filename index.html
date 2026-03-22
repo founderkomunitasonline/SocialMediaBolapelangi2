@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>BOLAPELANGI2 • Hub Media Sosial Terlengkap</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+            background: linear-gradient(145deg, #fff9f0 0%, #ffe6f0 50%, #e6f0ff 100%);
+            color: #1a1e2b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        /* Pelangi background animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, 
+                rgba(255,0,0,0.03), 
+                rgba(255,165,0,0.03), 
+                rgba(255,255,0,0.03), 
+                rgba(0,255,0,0.03), 
+                rgba(0,127,255,0.03), 
+                rgba(0,0,255,0.03), 
+                rgba(75,0,130,0.03));
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Rainbow header */
+        .rainbow-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .rainbow-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, 
+                #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: rainbow 3s ease infinite;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .badge-rainbow {
+            display: inline-block;
+            background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+            padding: 0.3rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Social Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0 4rem;
+        }
+
+        /* Cards with rainbow border */
+        .social-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 1.8rem 1.5rem 2rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            cursor: default;
+        }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+            border-radius: 2rem;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .social-card:hover::before {
+            opacity: 1;
+        }
+
+        .social-card:hover {
+            transform: translateY(-12px);
+            background: #ffffff;
+            box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .card-desc {
+            color: #475569;
+            margin: 0.5rem 0 1rem;
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+
+        .stat {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #5b6e8c;
+            margin-top: 0.5rem;
+            border-top: 1px solid #e9eef3;
+            padding-top: 0.8rem;
+        }
+
+        .btn-connect {
+            margin-top: 1.3rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 60px;
+            padding: 0.7rem 1.5rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            width: fit-content;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-connect i {
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-connect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-connect:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Platform Colors */
+        .fb-color { color: #1877f2; }
+        .ig-color { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
+        .wa-color { color: #25D366; }
+        .tw-color { color: #1DA1F2; }
+        .tg-color { color: #26A5E4; }
+        .bsky-color { color: #1185fe; }
+        .tt-color { color: #000000; }
+        .yt-color { color: #FF0000; }
+
+        /* Rainbow Trending Section */
+        .trend-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,245,235,0.95));
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 3rem;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .trend-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+            border-radius: 2rem;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .trend-header h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .trend-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .trend-item {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.2rem;
+            flex: 1 1 160px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #ffe0b5;
+        }
+
+        .trend-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #ffa500;
+        }
+
+        /* Live Preview Cards */
+        .live-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .preview-card {
+            flex: 1;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,165,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffa500;
+        }
+
+        /* Floating Rainbow Animation */
+        .floating-rainbow {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: transform 0.3s;
+        }
+
+        .floating-rainbow:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-rainbow i {
+            font-size: 28px;
+            color: white;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(255,165,0,0.3);
+            color: #5b6e8c;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 720px) {
+            .container { padding: 1rem; }
+            .rainbow-text { font-size: 2rem; }
+            .card-title { font-size: 1.4rem; }
+            .social-grid { gap: 1.2rem; }
+            .trend-cards { gap: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="rainbow-header">
+        <span class="badge-rainbow"><i class="fas fa-rainbow"></i> Warna-Warni Dunia Sosial 🌈</span>
+        <h1 class="rainbow-text">BOLAPELANGI2</h1>
+        <p class="tagline">✨ 8 Platform Media Sosial Terlengkap dalam Satu Tempat ✨<br>🌈 Warna-warni Koneksi Tanpa Batas 🌈</p>
+    </div>
+
+    <!-- Grid Media Sosial Lengkap -->
+    <div class="social-grid">
+        <!-- Facebook -->
+        <div class="social-card">
+            <div class="card-icon"><i class="fab fa-facebook fa-3x fb-color"></i></div>
+            <div class="card-title">Facebook</div>
+            <div class="card-desc">Temukan teman, bagikan cerita, dan ikuti komunitas global. Hubungan semakin erat.</div>
+            <div class="stat"><span><i class="fas fa-users"></i> 3M+ aktif</span><span><i class="fas fa-newspaper"></i> Feed & Grup</span></div>
+            <button class="btn-connect" onclick="showPlatformAlert('Facebook')"><span>Kunjungi Hub</span> <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- Instagram -->
+        <div class="social-card">
+            <div class="card-icon"><i class="fab fa-instagram fa-3x ig-color"></i></div>
+            <div class="card-title">Instagram</div>
+            <div class="card-desc">Visual stories, reels, dan inspirasi aesthetic. Abadikan momen terbaikmu.</div>
+            <div class="stat"><span><i class="fas fa-camera"></i> Stories & Reels</span><span><i class="fas fa-heart"></i> 600M+ daily</span></div>
+            <button class="btn-connect" onclick="showPlatformAlert('Instagram')"><span>Explore Now</span> <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- WhatsApp -->
+        <div class="social-card">
+            <div class="card-icon"><i class="fab fa-whatsapp fa-3x wa-color"></i></div>
+            <div class="card-title">WhatsApp</div>
+            <div class="card-desc">Pesan pribadi, grup, panggilan video dengan enkripsi end-to-end. Tetap terhubung.</div>
+            <div class="stat"><span><i class="fas fa-comment-dots"></i> Status & Chat</span><span><i class="fas fa-lock"></i> Privasi</span></div>
+            <button class="btn-connect" onclick="showPlatformAlert('WhatsApp')"><span>Chat Sekarang</span> <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- Twitter -->
+        <div class="social-card">
+            <div class="card-icon"><i class="fab fa-twitter fa-3x tw-color"></i></div>
+            <div class="card-title">Twitter / X</div>
+            <div class="card-desc">Berita terkini, thread viral, dan opini publik. Ikuti trending topic dunia.</div>
+            <div class="stat"><span><i class="fas fa-chart-line"></i> Trending</span><span><i class="fas fa-retweet"></i> Retweet</span></div>
+            <button class="btn-connect" onclick="showPlatformAlert('Twitter')"><span>Jelajahi</span> <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- Telegram -->
+        <div class="social-card">
+            <div class="card-icon"><i class="fab fa-telegram fa-3x tg-color"></i></div>
+            <div class="card-title">Telegram</div>
+            <div class="card-desc">Saluran, bot, grup super besar. Cloud-based & super cepat untuk berbagi file.</div>
+            <div class="stat"><span><i class="fas fa-robot"></i> Bot Pintar</span><span><i class="fas fa-cloud"></i> 2GB file</span></div>
+            <button class="btn-connect" onclick="showPlatformAlert('Telegram')"><span>Gabung Channel</span> <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- Bluesky -->
+        <div class="social-card">
+            <div class="card-icon"><i class="fab fa-bluesky fa-3x bsky-color"></i></div>
+            <div class="card-title">Bluesky</div>
+            <div class="card-desc">Jejaring sosial desentralisasi, atmosfer segar dan bebas. Temukan komunitas baru.</div>
+            <div class="stat"><span><i class="fas fa-feather-alt"></i> At-protocol</span><span><i class="fas fa-globe"></i> Federasi</span></div>
+            <button class="btn-connect" onclick="showPlatformAlert('Bluesky')"><span>Jelajahi Sky</span> <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- TikTok -->
+        <div class="social-card">
+            <div class="card-icon"><i class="fab fa-tiktok fa-3x tt-color"></i></div>
+            <div class="card-title">TikTok</div>
+            <div class="card-desc">Video pendek viral, tantangan seru, dan alur kreatif tanpa batas. #ForYourPage</div>
+            <div class="stat"><span><i class="fas fa-music"></i> Viral Hits</span><span><i class="fas fa-video"></i> 1.5B+ users</span></div>
+            <button class="btn-connect" onclick="showPlatformAlert('TikTok')"><span>Mulai scroll</span> <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- YouTube -->
+        <div class="social-card">
+            <div class="card-icon"><i class="fab fa-youtube fa-3x yt-color"></i></div>
+            <div class="card-title">YouTube</div>
+            <div class="card-desc">Streaming video, vlog, tutorial musik dan konten eksklusif dari creator favorit.</div>
+            <div class="stat"><span><i class="fas fa-play-circle"></i> 2.5B+ users</span><span><i class="fas fa-subscribe"></i> Subscribe</span></div>
+            <button class="btn-connect" onclick="showPlatformAlert('YouTube')"><span>Tonton Sekarang</span> <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Rainbow Trending Section -->
+    <div class="trend-section">
+        <div class="trend-header">
+            <h3><i class="fas fa-rainbow"></i> 🌈 Trending Pelangi 🌈</h3>
+            <p style="color: #ff6b6b; margin-top: 5px;">Update real-time · Warna-warni trending dari seluruh platform</p>
+        </div>
+        <div class="trend-cards">
+            <div class="trend-item"><div class="trend-icon"><i class="fab fa-twitter tw-color"></i></div><div class="trend-name">#Bolapelangi2</div><div class="trend-hashtag">50.2K posts</div></div>
+            <div class="trend-item"><div class="trend-icon"><i class="fab fa-tiktok tt-color"></i></div><div class="trend-name">#RainbowChallenge</div><div class="trend-hashtag">230K videos</div></div>
+            <div class="trend-item"><div class="trend-icon"><i class="fab fa-instagram ig-color"></i></div><div class="trend-name">#PelangiNusantara</div><div class="trend-hashtag">98.4K posts</div></div>
+            <div class="trend-item"><div class="trend-icon"><i class="fab fa-youtube yt-color"></i></div><div class="trend-name">Warna-Warni Cover</div><div class="trend-hashtag">Trending #1</div></div>
+        </div>
+    </div>
+
+    <!-- Live Preview Interaktif -->
+    <div class="live-preview">
+        <div class="preview-card">
+            <h4><i class="fab fa-whatsapp wa-color"></i> 💬 Pesan Pelangi</h4>
+            <div class="msg-row"><i class="fas fa-user-circle fa-lg"></i><div><div class="msg-bubble">Halo! Selamat datang di BOLAPELANGI2! 🌈✨</div><div class="msg-time">Baru saja</div></div></div>
+            <div class="msg-row"><i class="fas fa-user-circle fa-lg" style="color:#ff6b6b"></i><div><div class="msg-bubble">Wah keren banget! Lengkap semua platform sosialnya!</div><div class="msg-time">1 menit lalu</div></div></div>
+        </div>
+        <div class="preview-card">
+            <h4><i class="fab fa-telegram tg-color"></i> 📢 Channel Update</h4>
+            <div class="msg-row"><i class="fas fa-bolt" style="color:#ffa500"></i><div><div class="msg-bubble"><strong>🌈 BOLAPELANGI2</strong> Kini hadir dengan 8 platform sosial dalam satu dashboard!</div></div></div>
+        </div>
+        <div class="preview-card">
+            <h4><i class="fab fa-twitter tw-color"></i> 🐦 X Feed</h4>
+            <div class="msg-row"><i class="fab fa-twitter"></i><div><div class="msg-bubble"><strong>@bolapelangi2</strong> · 5 menit<br>Platform sosial terlengkap sudah hadir! Cek sekarang juga! #BOLAPELANGI2 🚀🌈</div></div></div>
+        </div>
+    </div>
+
+    <!-- Floating Rainbow Button -->
+    <div class="floating-rainbow" onclick="showWelcomeMessage()">
+        <i class="fas fa-rainbow"></i>
+    </div>
+
+    <div class="footer">
+        <p><i class="fas fa-rainbow"></i> <strong>BOLAPELANGI2</strong> — Hubungan terlengkap untuk Facebook, Instagram, WhatsApp, Twitter, Telegram, Bluesky, TikTok, YouTube <i class="fas fa-rainbow"></i></p>
+        <p style="margin-top: 8px;">🌈 Warna-warni sosial media dalam satu genggaman | 🌟 Ikuti tren terupdate bersama kami</p>
+        <p style="margin-top: 5px; font-size: 0.75rem;">© 2025 BOLAPELANGI2 · All Platforms Complete</p>
+    </div>
+</div>
+
+<script>
+    function showPlatformAlert(platform) {
+        const messages = {
+            'Facebook': '📘 Menuju Facebook — Temukan teman dan komunitas seru!',
+            'Instagram': '📸 Instagram — Bagikan momen colorful-mu! 🌈',
+            'WhatsApp': '💚 WhatsApp — Chat dengan keluarga dan teman!',
+            'Twitter': '🐦 Twitter / X — Ikuti trending topic terkini!',
+            'Telegram': '📡 Telegram — Gabung channel & grup seru!',
+            'Bluesky': '☁️ Bluesky — Social media masa depan!',
+            'TikTok': '🎵 TikTok — Video viral menantimu!',
+            'YouTube': '📺 YouTube — Tonton video favoritmu!'
+        };
+        alert(`✨ ${messages[platform] || `Menuju ${platform}`} ✨\n\n🌈 BOLAPELANGI2 — Hub Media Sosial Terlengkap`);
+    }
+
+    function showWelcomeMessage() {
+        alert('🌈✨ SELAMAT DATANG DI BOLAPELANGI2 ✨🌈\n\n📱 8 Platform Media Sosial Terlengkap:\n✅ Facebook\n✅ Instagram\n✅ WhatsApp\n✅ Twitter\n✅ Telegram\n✅ Bluesky\n✅ TikTok\n✅ YouTube\n\n🎨 Warna-warni koneksi tanpa batas!');
+    }
+
+    // Efek rainbow pada hover card
+    const cards = document.querySelectorAll('.social-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-12px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    console.log("🌈 BOLAPELANGI2 — Complete Social Media Hub Loaded! 🌈");
+    console.log("📱 8 Platforms: Facebook, Instagram, WhatsApp, Twitter, Telegram, Bluesky, TikTok, YouTube");
+</script>
+</body>
+</html>
